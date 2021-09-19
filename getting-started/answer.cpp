@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 
-    for (auto i = 0; i < 10; i++) {
+    for (auto i = 0; i < 1000; i++) {
         int a, b;
         string ope;
 

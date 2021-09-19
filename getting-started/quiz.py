@@ -1,6 +1,6 @@
 import random
 
-nQuiz = 10
+nQuiz = 1000
 data = []
 
 f = open(file="out.txt", mode='w')
@@ -12,7 +12,8 @@ for i in range(nQuiz):
     second = random.choice(range(1, 100000))
     operator = random.choice(["+", "-", "*", "/", "%"])
 
-    print(first, operator, second, sep=" ")
+    # please flush property true
+    print(first, operator, second, sep=" ", flush=True)
 
     # get python's answer
     pyAns = 0
@@ -35,5 +36,6 @@ for i in range(nQuiz):
 
 for i in range(nQuiz):
     first, operator, second, pyAns, cppAns = data[i][0], data[i][1], data[i][2], data[i][3], data[i][4]
-    print(str(first)+" "+operator+" "+str(second)+" = (python: "+str(pyAns)+", cpp: "+cppAns+")")
+    # please flush property true
+    print(str(first)+" "+operator+" "+str(second)+" = (python: "+str(pyAns)+", cpp: "+cppAns+")", flush=True)
     print(str(first)+" "+operator+" "+str(second)+" = (python: "+str(pyAns)+", cpp: "+cppAns+")", file=f)
