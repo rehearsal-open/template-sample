@@ -1,0 +1,16 @@
+version: 1.202109
+
+# cui task can make automation build task
+
+phase:
+- name: build_execute_files
+  task:
+  - name: gcc_build
+    kind: cui
+    cmd: g++
+    args: [answer.cpp, -o, answer.exe]
+    stdout:
+      write-log: true
+    stderr:
+      write-log: true
+- name: execute
