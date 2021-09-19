@@ -10,11 +10,11 @@ int main() {
 
         cin >> a >> ope >> b;
         switch (ope[0]) {
-        case '+': cout << a + b << endl; break;
-        case '-': cout << a - b << endl; break;
-        case '*': cout << a * b << endl; break;
-        case '/': cout << a / b << endl; break;
-        case '%': cout << a % b << endl; break;
+        case '+': cout << a + b << flush << endl; break;
+        case '-': cout << a - b << flush << endl; break;
+        case '*': cout << a * b << flush << endl; break;
+        case '/': cout << a / b << flush << endl; break;
+        case '%': cout << a % b << flush << endl; break;
         }
     }
 }
