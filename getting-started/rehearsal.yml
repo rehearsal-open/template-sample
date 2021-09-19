@@ -1,0 +1,29 @@
+version: 1.202109
+phase:
+- name: build # build and set environments
+  task:
+  - name: gcc_build
+    kind: cui
+    cmd: g++
+    args: [answer.cpp, -o, answer]
+    stdout:
+      write-log: true
+    stderr:
+      write-log: true
+- name: run_task  # cpp executable file
+  task:
+  - name: cpp
+    kind: cui
+    cmd: ./answer.exe
+    stdout:
+      write-log: true
+      sendto:
+        - python
+  - name: python # run python script
+    kind: cui
+    cmd: python
+    args: [quiz.py]
+    stdout:
+      write-log: true
+      sendto:
+        - cpp
